@@ -331,7 +331,7 @@ st.dataframe(
         "id": st.column_config.NumberColumn("Claim ID", format="%d"),
         "predicted_loss": st.column_config.NumberColumn(
             "Predicted Loss",
-            format="$%.2f",
+            format="$%,.2f",
             help="Predicted dollar loss from LightGBM regressor",
         ),
         "high_severity_probability": st.column_config.ProgressColumn(
