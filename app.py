@@ -109,6 +109,10 @@ section[data-testid="stSidebar"] * {
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+[data-testid="stCheckbox"] svg {
+    color: #f85149 !important;
+    fill: #f85149 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -335,11 +339,11 @@ st.dataframe(
             help="Predicted dollar loss from LightGBM regressor",
         ),
         "high_severity_probability": st.column_config.ProgressColumn(
-            "High-Sev Probability",
-            format="%.4f",
-            min_value=0.0,
-            max_value=1.0,
-            help="Classifier probability of falling in top 10% of losses",
+    "High Severity Probability",
+    format="%.1f%%",
+    min_value=0.0,
+    max_value=1.0,
+    help="Classifier probability of falling in top 10% of losses",
         ),
         "high_severity_flag": st.column_config.CheckboxColumn(
             "Flagged",
